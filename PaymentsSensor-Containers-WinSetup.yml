@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    restart: always
+    container_name: payments_sensor_db
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: admin!@#123
+    volumes:
+      - type: bind
+        source: c:/payments_sensor/data
+        target: /var/opt/mssql/data
+    networks:
+      payments_sensor_network:
+    ports:
+      - 1434:1433
+
+  paymentsemail_scannerconfig_webapp:
+    image: kparginos/paymentsemailscannerconfigapp:1.0.0
+    restart: always
+    container_name: paymentsemail_scannerconfig_webapp
+    networks:
+      - payments_sensor_network
+    ports:
+      - 7575:80
+
+networks:
+  payments_sensor_network:
