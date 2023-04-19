@@ -27,7 +27,7 @@ services:
       - 7575:80
 
   paymentsemail_scanner_webapp:
-    image: kparginos/paymentsemailscannerapp:1.0.0
+    image: kparginos/paymentsemailscannerwebapp:1.0.0
     restart: always
     container_name: paymentsemail_scanner_webapp
     volumes:
