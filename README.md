@@ -27,9 +27,12 @@ docker-compose -f PaymentsSensor-Containers-WinSetup.yml pull
 Once finished, run the following to update the containers:
 
 ```
-docker-compose -f PaymentsSensor-Containers-WinSetup.yml up -d
+docker-compose -f PaymentsSensor-Containers-WinSetup.yml up -d --no-deps paymentsemail_scannerconfig_webapp
 ```
 
+```
+docker-compose -f PaymentsSensor-Containers-WinSetup.yml up -d --no-deps paymentsemail_scanner_webapp
+```
 
 </p>
 
