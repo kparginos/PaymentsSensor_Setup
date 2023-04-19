@@ -26,5 +26,21 @@ services:
     ports:
       - 7575:80
 
+  paymentsemail_scanner_webapp:
+    image: kparginos/paymentsemailscannerapp:1.0.0
+    restart: always
+    container_name: paymentsemail_scanner_webapp
+    volumes:
+      - type: bind
+        source: c:/payments_sensor/logs
+        target: /app/logs
+      - type: bind
+        source: c:/payments_sensor/attachments
+        target: /app/attachments
+    networks:
+      - payments_sensor_network
+    ports:
+      - 8585:80
+
 networks:
   payments_sensor_network:
