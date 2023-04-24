@@ -1,7 +1,10 @@
 # PaymentsSensor Containers Update
-This setup will involve the usage of three(3) different containers under Docker-Compose infrastructure. Currenctly only the first two(2) containers will be availiable, containting the database and the Configuration API
+This setup will involve the usage of three(3) different containers under Docker-Compose infrastructure. These containers are described as following:
+1. The Database container which will maintain all the configuration information for the Email Scanner API
+2. The Email Scanner Configiuration API
+3. The Email Scanner API
 
-* Current release v1.0.0
+* Current release v1.0.1
 
 <p>
 <details><summary>How to update the container on a host machine</summary>
@@ -18,7 +21,7 @@ This setup will involve the usage of three(3) different containers under Docker-
 
 2. To update to the latest version you need to do the following:
 
-* For the Windows Host, go to the folder where the .yml file is located and run this command:
+* For the Windows Host, go to the folder where the .yml file is located and run the following command:
 
 ```
 docker-compose -f PaymentsSensor-Containers-WinSetup.yml pull
@@ -27,12 +30,9 @@ docker-compose -f PaymentsSensor-Containers-WinSetup.yml pull
 Once finished, run the following to update the containers:
 
 ```
-docker-compose -f PaymentsSensor-Containers-WinSetup.yml up -d --no-deps paymentsemail_scannerconfig_webapp
+docker-compose -f PaymentsSensor-Containers-WinSetup.yml up -d
 ```
 
-```
-docker-compose -f PaymentsSensor-Containers-WinSetup.yml up -d --no-deps paymentsemail_scanner_webapp
-```
 
 </p>
 
