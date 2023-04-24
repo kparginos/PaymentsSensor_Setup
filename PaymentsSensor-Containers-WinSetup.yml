@@ -16,6 +16,12 @@ services:
       payments_sensor_network:
     ports:
       - 1434:1433
+    healthcheck:
+      test: /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P admin!@#123 -Q "SELECT Count(*) From PaymentsEmailDB.model.UserLevels" || exit 1
+      interval: 10s
+      retries: 5
+      start_period: 15s
+      timeout: 30s
 
   paymentsemail_scannerconfig_webapp:
     image: kparginos/paymentsemailscannerconfigapp:1.0.0
@@ -25,9 +31,12 @@ services:
       - payments_sensor_network
     ports:
       - 7575:80
+    depends_on:
+      db:
+        condition: service_healthy
 
   paymentsemail_scanner_webapp:
-    image: kparginos/paymentsemailscannerwebapp:1.0.0
+    image: kparginos/paymentsemailscannerwebapp:1.0.1
     restart: always
     container_name: paymentsemail_scanner_webapp
     volumes:
@@ -41,6 +50,9 @@ services:
       - payments_sensor_network
     ports:
       - 8585:80
+    depends_on:
+      db:
+        condition: service_healthy
 
 networks:
   payments_sensor_network:
