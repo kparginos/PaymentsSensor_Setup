@@ -24,7 +24,7 @@ services:
       timeout: 30s
 
   paymentsemail_scannerconfig_webapp:
-    image: kparginos/paymentsemailscannerconfigapp:1.0.0
+    image: kparginos/paymentsemailscannerconfigapp:1.0.1
     restart: always
     container_name: paymentsemail_scannerconfig_webapp
     networks:
