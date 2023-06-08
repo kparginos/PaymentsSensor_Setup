@@ -6,7 +6,7 @@ This setup will involve the usage of three(3) different containers under Docker-
 
 3. The Email Scanner API
 
-* Current release v1.2.0
+* Current release v1.2.1
 
 <p>
 <details><summary>How to update the container on a host machine</summary>
@@ -41,6 +41,13 @@ docker-compose -f PaymentsSensor-Containers-WinSetup.yml up -d
 </details>
   
 <details><summary>Bug Fixes</summary>
+  
+* ### Scanner app version 1.2.1:
+
+>1. Fix made to scan all availiable emails.
+  
+>2. Fix made to store attachments to folder based on Sender's Code as this is defined in the configuration.
+  
 </details>
 
 <details><summary>Enhancements</summary>
