@@ -2,11 +2,11 @@
 This setup will involve the usage of three(3) different containers under Docker-Compose infrastructure. These containers are described as following:
 1. The Database container which will maintain all the configuration information for the Email Scanner API
 2. The Email Scanner Configiuration API
-* Current release v1.0.5
+* Current release v1.0.6
 
 3. The Email Scanner API
 
-* Current release v1.2.3
+* Current release v1.2.4
 
 <p>
 <details><summary>How to update the container on a host machine</summary>
@@ -51,11 +51,20 @@ docker-compose -f PaymentsSensor-Containers-WinSetup.yml up -d
 </details>
 
 <details><summary>Enhancements</summary>
+
+* ### Configuration app version 1.0.6(latest):
+
+>1. Configuration now support Senders with multiple receivers based on delimeter at the attachment file name.
+>2. List of Senders are sorted by name
   
 * ### Configuration app version 1.0.5:
   
-Configuration app supports refresh of the active configurations when a change is made to the database
-  
+> Configuration app supports refresh of the active configurations when a change is made to the database
+
+* ### Scanner app version 1.2.4(latest):
+
+> Scanner now support Senders with multiple receivers based on delimeter at the attachment file name.
+
 * ### Scanner app version 1.2.3:
 
 >1. Scanner app creates attachments folder under date in which the email has beeen received
