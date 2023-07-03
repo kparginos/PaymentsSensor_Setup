@@ -2,7 +2,7 @@
 This setup will involve the usage of three(3) different containers under Docker-Compose infrastructure. These containers are described as following:
 1. The Database container which will maintain all the configuration information for the Email Scanner API
 2. The Email Scanner Configiuration API
-* Current release v1.0.7
+* Current release v1.0.8
 
 3. The Email Scanner API
 
@@ -56,7 +56,11 @@ docker-compose -f PaymentsSensor-Containers-WinSetup.yml up -d
 
 <details><summary>Enhancements</summary>
 
-* ### Configuration app version 1.0.7(latest):
+* ### Configuration app version 1.0.8(latest):
+
+> Add sorting capabilities to tables for all pages.
+
+* ### Configuration app version 1.0.7:
 
 > Service Broker support for future use by the Analyzer
  
