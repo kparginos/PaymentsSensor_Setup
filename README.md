@@ -6,7 +6,7 @@ This setup will involve the usage of three(3) different containers under Docker-
 
 3. The Email Scanner API
 
-* Current release v1.2.6
+* Current release v1.2.7
 
 <p>
 <details><summary>How to update the container on a host machine</summary>
@@ -77,7 +77,11 @@ docker-compose -f PaymentsSensor-Containers-WinSetup.yml up -d
   
 > Configuration app supports refresh of the active configurations when a change is made to the database
 
-* ### Scanner app version 1.2.6(latest):
+* ### Scanner app version 1.2.7(latest):
+
+> Scanner app adds timestamp to file downloaded from link at the email body
+
+* ### Scanner app version 1.2.6:
 
 > Scanner app now supports the ability to download attachment provided in email by a link
 
